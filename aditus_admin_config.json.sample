@@ -1,0 +1,12 @@
+{
+    "TOKEN_REIMBURSER_QUEUE_NAME": "TokenReimburserQueue",
+    "MessageQueue": {
+        "MOCK" : true,
+        "MOCK_PORT" : 8020,
+        "AWS_CONFIG": {
+            "access": "[SccessKeyId]",
+            "secret ": "[SecretAccessKey]",
+            "region": "[Region]"
+        }
+    }
+}

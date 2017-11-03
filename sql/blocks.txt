@@ -1,0 +1,71 @@
+-- Table: public.blocks
+
+-- DROP TABLE public.blocks;
+
+CREATE TABLE public.blocks
+(
+    difficulty numeric(32, 1),
+    "extraData" text COLLATE pg_catalog."default",
+    "gasLimit" numeric(32, 1) NOT NULL,
+    "gasUsed" numeric(32, 1) NOT NULL,
+    "logsBloom" text COLLATE pg_catalog."default",
+    miner text COLLATE pg_catalog."default" NOT NULL,
+    "mixHash" text COLLATE pg_catalog."default",
+    nonce text COLLATE pg_catalog."default",
+    "number" bigint NOT NULL,
+    "parentHash" text COLLATE pg_catalog."default",
+    "receiptsRoot" text COLLATE pg_catalog."default",
+    "sha3Uncles" text COLLATE pg_catalog."default",
+    size numeric(32, 1),
+    "stateRoot" text COLLATE pg_catalog."default",
+    "timestamp" numeric(15, 1) NOT NULL,
+    "timestampParsed" timestamp(3) without time zone NOT NULL,
+    "totalDifficulty" numeric(32, 1),
+    "transactionsRoot" text COLLATE pg_catalog."default",
+    hash text COLLATE pg_catalog."default" NOT NULL,
+    CONSTRAINT blocks_pkey PRIMARY KEY (hash),
+    CONSTRAINT number_unique UNIQUE ("number")
+)
+WITH (
+    OIDS = FALSE
+)
+TABLESPACE pg_default;
+
+ALTER TABLE public.blocks
+    OWNER to postgres;
+
+-- Index: miner
+
+-- DROP INDEX public.miner;
+
+CREATE INDEX miner
+    ON public.blocks USING btree
+    (miner COLLATE pg_catalog."default")
+    TABLESPACE pg_default;
+
+-- Index: number
+
+-- DROP INDEX public."number";
+
+CREATE INDEX "number"
+    ON public.blocks USING btree
+    (number)
+    TABLESPACE pg_default;
+
+-- Index: timestamp
+
+-- DROP INDEX public."timestamp";
+
+CREATE INDEX "timestamp"
+    ON public.blocks USING btree
+    (timestamp)
+    TABLESPACE pg_default;
+
+-- Index: timestampParsed
+
+-- DROP INDEX public."timestampParsed";
+
+CREATE INDEX "timestampParsed"
+    ON public.blocks USING btree
+    (timestampParsed)
+    TABLESPACE pg_default;

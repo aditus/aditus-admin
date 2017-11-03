@@ -1,0 +1,28 @@
+-- Table: public.aditus_reimburser_log
+
+-- DROP TABLE public.aditus_reimburser_log;
+
+CREATE TABLE public.aditus_reimburser_log
+(
+    hash text COLLATE pg_catalog."default" NOT NULL,
+    "timestamp" text COLLATE pg_catalog."default",
+    "dealId" bigint,
+    "walletAddress" text COLLATE pg_catalog."default",
+    status text COLLATE pg_catalog."default",
+    CONSTRAINT aditus_reimburser_log_pkey PRIMARY KEY (hash),
+    CONSTRAINT "FK_DEAL_ID" FOREIGN KEY ("dealId")
+        REFERENCES public.aditus_deals (id) MATCH SIMPLE
+        ON UPDATE NO ACTION
+        ON DELETE NO ACTION,
+    CONSTRAINT "FK_WALLET_ADDRESS" FOREIGN KEY ("walletAddress")
+        REFERENCES public.aditus_wallets ("walletAddress") MATCH SIMPLE
+        ON UPDATE NO ACTION
+        ON DELETE NO ACTION
+)
+WITH (
+    OIDS = FALSE
+)
+TABLESPACE pg_default;
+
+ALTER TABLE public.aditus_reimburser_log
+    OWNER to postgres;

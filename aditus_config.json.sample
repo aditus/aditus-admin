@@ -1,0 +1,47 @@
+{
+    "ACTIVE_CONFIG_EXT": "",
+    "CONNECTION_STRING": "postgresql://aditus:guess@localhost:5432/aditus",
+    "ETH_NODE": "http://1.1.1.145:8545",
+    "TSP_CONTRACT_TOKEN": "0xe2d193b7769202d58239dc312143d5ccc74b7e4c",
+    "TSP_TOKEN_ABI":  [{"constant":true,"inputs":[],"name":"name","outputs":[{"name":"","type":"string"}],"payable":false,"stateMutability":"view","type":"function"},{"constant":false,"inputs":[{"name":"_spender","type":"address"},{"name":"_amount","type":"uint256"}],"name":"approve","outputs":[{"name":"success","type":"bool"}],"payable":false,"stateMutability":"nonpayable","type":"function"},{"constant":true,"inputs":[],"name":"totalSupply","outputs":[{"name":"totalSupply","type":"uint256"}],"payable":false,"stateMutability":"view","type":"function"},{"constant":false,"inputs":[{"name":"_from","type":"address"},{"name":"_to","type":"address"},{"name":"_amount","type":"uint256"}],"name":"transferFrom","outputs":[{"name":"success","type":"bool"}],"payable":false,"stateMutability":"nonpayable","type":"function"},{"constant":true,"inputs":[],"name":"decimals","outputs":[{"name":"","type":"uint8"}],"payable":false,"stateMutability":"view","type":"function"},{"constant":true,"inputs":[{"name":"_owner","type":"address"}],"name":"balanceOf","outputs":[{"name":"balance","type":"uint256"}],"payable":false,"stateMutability":"view","type":"function"},{"constant":true,"inputs":[],"name":"owner","outputs":[{"name":"","type":"address"}],"payable":false,"stateMutability":"view","type":"function"},{"constant":true,"inputs":[],"name":"symbol","outputs":[{"name":"","type":"string"}],"payable":false,"stateMutability":"view","type":"function"},{"constant":false,"inputs":[{"name":"_to","type":"address"},{"name":"_amount","type":"uint256"}],"name":"transfer","outputs":[{"name":"success","type":"bool"}],"payable":false,"stateMutability":"nonpayable","type":"function"},{"constant":true,"inputs":[{"name":"_owner","type":"address"},{"name":"_spender","type":"address"}],"name":"allowance","outputs":[{"name":"remaining","type":"uint256"}],"payable":false,"stateMutability":"view","type":"function"},{"inputs":[],"payable":false,"stateMutability":"nonpayable","type":"constructor"},{"anonymous":false,"inputs":[{"indexed":true,"name":"_from","type":"address"},{"indexed":true,"name":"_to","type":"address"},{"indexed":false,"name":"_value","type":"uint256"}],"name":"Transfer","type":"event"},{"anonymous":false,"inputs":[{"indexed":true,"name":"_owner","type":"address"},{"indexed":true,"name":"_spender","type":"address"},{"indexed":false,"name":"_value","type":"uint256"}],"name":"Approval","type":"event"}],
+    "EMAIL_QUEUE_NAME": "TestEmailNotifierQueue",
+    "REHYDRATOR_QUEUE_NAME": "TestRehydratorQueue",
+    "TOKEN_VENDAR_QUEUE_NAME": "TestTokenVendarQueue",
+    "COINBASE_PRIVATE_KEY": "<COIN_BASE_PRIVATE_KEY>",
+    "TEST": true,
+    "EmailNotifier": {
+        "QUEUE_NAME": "TestEmailNotifierQueue",
+        "SENDGRID_API_KEY": "",
+        "EMAIL_ADDRESSES": [
+            "example@thesoftwarepractice.com"
+        ],
+        "FROM_EMAIL": "noreply@aditus.com"
+    },
+    "Rehydrator": {
+        "QUEUE_NAME": "TestRehydratorQueue",
+        "MAX_REHYDRATION_LIMIT": 100,
+        "REHYDRATION_ETH_AMOUNT": 0.001,
+        "WAITTIME_AFTER_NONADTIUS_TRANSFER_IN_SECONDS": 21600,
+        "COINBASE_PRIVATE_KEY": "<COIN_BASE_PRIVATE_KEY>"
+    },
+    "TokenVendar": {
+        "QUEUE_NAME": "TestTokenVendarQueue",
+        "COINBASE_PRIVATE_KEY": "<COIN_BASE_PRIVATE_KEY>"
+    },
+    "WalletWatcher": {
+        "WALLET_ARRAY": ["0x7fbE93bC104Ac4Bcae5D643fd3747e1866F1EcE4"],
+        "MIN_ETH_BALANCE": 1000,
+        "MIN_TSP_BALANCE": 1000,
+        "WAIT_TIME_IN_SECONDS": 7200,
+        "DELAY_TIME_IN_MILLISECONDS": 15000
+    },
+    "MessageQueue": {
+        "MOCK": false,
+        "MOCK_PORT": 8020,
+        "AWS_CONFIG": {
+            "access": "[SccessKeyId]",
+            "secret ": "[SecretAccessKey]",
+            "region": "[Region]"
+        }
+    }
+}

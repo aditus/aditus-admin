@@ -1,0 +1,17 @@
+{
+  "name": "aditus_admin",
+  "version": "0.1.1",
+  "description": "aditus_admin",
+  "main": "aditus_admin.js",
+  "author": "Charaka Gunatillake <charaka@thesoftwarepractice.com>",
+  "dependencies": {
+    "@sendgrid/mail": "6.1.3",
+    "crypto-js": "3.1.8",
+    "elliptic": "6.4.0",
+    "ethereumjs-tx": "1.3.3",
+    "messenger": "0.0.9",
+    "pg": "6.4.2",
+    "sqs": "2.0.2",
+    "web3": "0.20.2"
+  }
+}

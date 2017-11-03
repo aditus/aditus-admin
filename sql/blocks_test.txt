@@ -1,0 +1,35 @@
+-- Table: public.blocks_test
+
+-- DROP TABLE public.blocks_test;
+
+CREATE TABLE public.blocks_test
+(
+    difficulty numeric(32, 1),
+    "extraData" text COLLATE pg_catalog."default",
+    "gasLimit" numeric(32, 1) NOT NULL,
+    "gasUsed" numeric(32, 1) NOT NULL,
+    "logsBloom" text COLLATE pg_catalog."default",
+    miner text COLLATE pg_catalog."default" NOT NULL,
+    "mixHash" text COLLATE pg_catalog."default",
+    nonce text COLLATE pg_catalog."default",
+    "number" bigint NOT NULL,
+    "parentHash" text COLLATE pg_catalog."default",
+    "receiptsRoot" text COLLATE pg_catalog."default",
+    "sha3Uncles" text COLLATE pg_catalog."default",
+    size numeric(32, 1),
+    "stateRoot" text COLLATE pg_catalog."default",
+    "timestamp" numeric(15, 1) NOT NULL,
+    "timestampParsed" timestamp(3) without time zone NOT NULL,
+    "totalDifficulty" numeric(32, 1),
+    "transactionsRoot" text COLLATE pg_catalog."default",
+    hash text COLLATE pg_catalog."default" NOT NULL,
+    CONSTRAINT blocks_test_pkey PRIMARY KEY (hash),
+    CONSTRAINT number_test_unique UNIQUE ("number")
+)
+WITH (
+    OIDS = FALSE
+)
+TABLESPACE pg_default;
+
+ALTER TABLE public.blocks_test
+    OWNER to postgres;
